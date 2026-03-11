@@ -25,7 +25,7 @@
       color: var(--text);
     }
 
-    /* ── PIXEL FOREST BACKGROUND ── */
+  
     #bg-canvas {
       position: fixed; inset: 0;
       width: 100%; height: 100%;
@@ -34,7 +34,7 @@
       image-rendering: crisp-edges;
     }
 
-    /* ── CARD ── */
+
     .card {
       position: relative; z-index: 10;
       width: 320px;
@@ -54,13 +54,13 @@
       to   { opacity:1; transform:translateY(0) scale(1); }
     }
 
-    /* ── AVATAR ── */
+  
     .avatar-wrap {
       position: relative;
       width: 88px; height: 88px;
     }
 
-    /* Spinning gradient ring */
+    
     .avatar-ring {
       position: absolute; inset: -4px; border-radius: 50%;
       background: conic-gradient(#f5c842, #e07c3a, #6ab8d4, #b06cf0, #f5c842);
@@ -79,11 +79,11 @@
       border-radius: 50%;
       object-fit: cover;
       display: block;
-      /* Placeholder gradient when no gif */
+     
       background: linear-gradient(135deg, #1a1500, #2a2000);
     }
 
-    /* Placeholder shown when no src */
+    
     .avatar-placeholder {
       position: absolute; inset: 0; z-index: 1;
       width: 88px; height: 88px;
@@ -104,7 +104,7 @@
       0%,100%{opacity:1;transform:scale(1)} 50%{opacity:.4;transform:scale(.82)}
     }
 
-    /* ── TEXT ── */
+    
     .name { font-size: 1.25rem; font-weight: 600; letter-spacing: -.01em; }
 
     .description { text-align: center; font-size: .73rem; color: var(--muted); line-height: 1.65; }
@@ -113,7 +113,7 @@
 
     .divider { width: 100%; height: 1px; background: rgba(255,220,100,.07); }
 
-    /* ── MUSIC PLAYER ── */
+   
     .music-player {
       width: 100%;
       background: rgba(0,0,0,.5);
@@ -168,9 +168,7 @@
     }
     audio { display: none; }
 
-    /* ════════════════════════════════════════
-       SOCIAL BUTTONS — INVERT WIPE EFFECT
-       ════════════════════════════════════════ */
+
     .socials { display: flex; gap: .6rem; flex-wrap: wrap; justify-content: center; }
 
     .social-btn {
@@ -185,7 +183,7 @@
       flex-shrink: 0;
     }
 
-    /* Layer 1: normal state (dark bg, colored/white icon) */
+    
     .btn-face {
       position: absolute; inset: 0; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
@@ -194,12 +192,12 @@
     .btn-face svg { width: 18px; height: 18px; fill: white; position: relative; z-index: 1; }
     .btn-face img { width: 18px; height: 18px; position: relative; z-index: 1; }
 
-    /* Layer 2: hover state — white bg, dark icon */
+    
     .btn-hover {
       position: absolute; inset: 0; border-radius: 50%;
       display: flex; align-items: center; justify-content: center;
       background: #ffffff;
-      /* Clip wipe: starts fully clipped on the left */
+     
       clip-path: inset(0 100% 0 0);
       transition: clip-path .38s cubic-bezier(.77,0,.18,1);
       z-index: 2;
@@ -207,21 +205,21 @@
     .btn-hover svg { width: 18px; height: 18px; fill: #000; position: relative; }
     .btn-hover img { width: 18px; height: 18px; filter: invert(1); position: relative; }
 
-    /* On hover: wipe reveals from left to right */
+   
     .social-btn:hover .btn-hover {
       clip-path: inset(0 0% 0 0);
     }
 
-    /* Normal bg colors */
+   
     .btn-x       .btn-face { background: #111; }
     .btn-discord .btn-face { background: #5865F2; }
     .btn-gmail   .btn-face { background: #EA4335; }
     .btn-github  .btn-face { background: #161b22; }
 
-    /* Hover bg color line — keeps white but you can tint */
+    
     .btn-discord .btn-hover { background: #fff; }
 
-    /* ── NOTIFICATION ── */
+    
     .notification {
       position: fixed; bottom: 1.5rem; left: 50%;
       transform: translateX(-50%) translateY(8px);
@@ -241,7 +239,7 @@
     }
   </style>
   <style>
-    /* ── START OVERLAY ── */
+    
     #overlay {
       position: fixed; inset: 0;
       background: #000;
@@ -281,7 +279,7 @@
 </head>
 <body>
 
-  <!-- START OVERLAY -->
+  
 <div id="overlay">
   <button id="start-btn" onclick="startSite()">START</button>
   <div id="overlay-footer">made with &lt;3</div>
@@ -291,13 +289,10 @@
 
 <div class="card">
 
-  <!-- AVATAR -->
+  
   <div class="avatar-wrap">
     <div class="avatar-ring"></div>
-    <!--
-      Замени src на свою гифку:
-      <img class="avatar-img" src="avatar.gif" alt="avatar">
-    -->
+ 
     <img class="avatar-img" src="TqHh.gif" alt="avatar">
     <div class="status-dot"></div>
   </div>
@@ -314,7 +309,7 @@
   <!-- MUSIC PLAYER -->
   <div class="music-player">
     <div class="cover-art">
-  <!-- Вставь сюда свою картинку -->
+  
   <img src="artworks-FAzuFux8WnEz4iOz-35C1xw-t500x500.jpg" alt="cover art">
 </div>
 
@@ -339,16 +334,16 @@
     </div>
   </div>
 
-  <!-- Замени src на свой mp3: <audio id="audio" src="song.mp3"> -->
+
   <audio id="audio" src="UdieNnx_-_ACIDO_III_(mp3.pm).mp3" autoplay ></audio>
 
   <div class="divider"></div>
 
-  <!-- SOCIAL BUTTONS -->
+ 
   <div class="socials">
 
-    <!-- X / Twitter -->
-    <a href="https://x.com/username" class="social-btn btn-x" target="_blank">
+   
+    <a href="https://x.com/koll0bo4ek" class="social-btn btn-x" target="_blank">
       <div class="btn-face">
         <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622 5.911-5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
       </div>
@@ -357,8 +352,8 @@
       </div>
     </a>
 
-    <!-- Discord -->
-    <button class="social-btn btn-discord" onclick="copyDiscord()">
+  
+    <button class="social-btn btn-discord" onclick="copyDiscord(koll0bo4ek)">
       <div class="btn-face">
         <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.03.056a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994a.076.076 0 0 0-.041-.106 13.107 13.107 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
       </div>
@@ -367,8 +362,8 @@
       </div>
     </button>
 
-    <!-- Gmail -->
-    <a href="mailto:hello@example.com" class="social-btn btn-gmail">
+  
+    <a href="mailto:kakoenevazhno@gmail.com" class="social-btn btn-gmail">
       <div class="btn-face">
         <svg viewBox="0 0 24 24"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"/></svg>
       </div>
@@ -377,8 +372,8 @@
       </div>
     </a>
 
-    <!-- GitHub -->
-    <a href="https://github.com/username" class="social-btn btn-github" target="_blank">
+   
+    <a href="https://github.com/koll0bo4ek" class="social-btn btn-github" target="_blank">
       <div class="btn-face">
         <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.298 24 12c0-6.63-5.37-12-12-12z"/></svg>
       </div>
@@ -394,9 +389,7 @@
 <div class="notification" id="notif"></div>
 
 <script>
-// ════════════════════════════════════════
-//  ANIMATED PIXEL FOREST BACKGROUND
-// ════════════════════════════════════════
+
 (function(){
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
@@ -410,24 +403,24 @@
   window.addEventListener('DOMContentLoaded', () => {
   if (!audio.src || audio.src === window.location.href) return;
 
-  // Пытаемся запустить музыку
+  
   let playPromise = audio.play();
 
   if (playPromise !== undefined) {
     playPromise.then(_ => {
-      // Браузер разрешил автоплей! Меняем иконку на Паузу
+      
       document.getElementById('play-icon').style.display = 'none';
       document.getElementById('pause-icon').style.display = 'block';
     })
     .catch(error => {
-      // Браузер заблокировал автоплей (обычное дело)
+      
       console.log("Автоплей заблокирован браузером. Требуется клик пользователя.");
-      // Оставляем иконку Play
+      
     });
   }
 });
 
-  // Build static scene
+
   const buf = document.createElement('canvas');
   buf.width = W; buf.height = H;
   const bx = buf.getContext('2d');
@@ -439,14 +432,14 @@
     bx.fillRect(x,y,1,1);
   }
 
-  // Sky
+  
   const skyColors = ['#080600','#0e0b00','#181200','#221900','#2e2100'];
   for(let y=0;y<H;y++){
     const ci = Math.min(skyColors.length-1, Math.floor(y/H * skyColors.length));
     for(let x=0;x<W;x++) px(x,y,skyColors[ci]);
   }
 
-  // Sun glow
+  
   const SX=132, SY=20;
   bx.globalAlpha=1;
   for(let r=36;r>0;r--){
@@ -457,7 +450,7 @@
   bx.globalAlpha=1;
   bx.fillStyle='#fff8c0'; bx.fillRect(SX,SY,2,2);
 
-  // Sun rays
+ 
   const rays=[
     {a:-0.55,l:80,w:2},{a:-0.35,l:65,w:1},{a:-0.15,l:85,w:3},
     {a:0.05, l:75,w:2},{a:0.25, l:68,w:1},{a:0.45, l:78,w:2},
@@ -495,19 +488,19 @@
     }
   }
 
-  // Far trees
+ 
   for(let i=0;i<30;i++){
     const tx=Math.floor(i*(W/30)+Math.sin(i*1.7)*4);
     tree(tx, 15+Math.floor(Math.abs(Math.sin(i*2.3))*12), 1, 3+Math.floor(Math.abs(Math.cos(i*1.5))*3), false);
   }
 
-  // Mid trees
+  
   tree(12, 58,2,11,false); tree(40, 70,3,14,true);
   tree(70, 54,2,10,false); tree(98, 62,2,12,true);
   tree(126,68,3,13,false); tree(156,60,2,11,true);
   tree(184,52,2,10,false);
 
-  // Dark edges
+  
   for(let y=0;y<H;y++){
     const lw=Math.floor(9+Math.sin(y*.28)*4);
     for(let x=0;x<lw;x++) px(x,y,'#040300',.92);
@@ -515,14 +508,14 @@
     for(let x=W-rw;x<W;x++) px(x,y,'#040300',.92);
   }
 
-  // Ground
+  
   for(let y=H-10;y<H;y++)
     for(let x=0;x<W;x++) px(x,y,'#060400');
 
   bx.globalAlpha=1;
   const staticImg = bx.getImageData(0,0,W,H);
 
-  // Fireflies
+  
   const GOLDS=['#b08000','#c89600','#e0aa00','#f0c000','#ffd840','#ffe860'];
   const ff=Array.from({length:55},()=>({
     x:30+Math.random()*140, y:18+Math.random()*68,
@@ -548,15 +541,13 @@
   }
   loop();
 })();
-// ════════════════════════════════════════
-//  START OVERLAY
-// ════════════════════════════════════════
+
 function startSite(){
   const overlay = document.getElementById('overlay');
   overlay.classList.add('fade-out');
   setTimeout(()=>{ overlay.style.display='none'; }, 1200);
 
-  // Autoplay music after user interaction
+  
   const a = document.getElementById('audio');
   if(a.src && a.src !== window.location.href){
     a.play().then(()=>{
@@ -566,9 +557,7 @@ function startSite(){
   }
 }
 
-// ════════════════════════════════════════
-//  RANDOM QUOTE
-// ════════════════════════════════════════
+
 const quotes=[
   '"404: life not found"','"my code runs... eventually"',
   '"git commit, pray, push"','"works on my machine"',
@@ -578,18 +567,14 @@ const quotes=[
 document.getElementById('random-quote').textContent=
   quotes[Math.floor(Math.random()*quotes.length)];
 
-// ════════════════════════════════════════
-//  DISCORD COPY
-// ════════════════════════════════════════
+
 function copyDiscord(){
   navigator.clipboard.writeText('yourdiscord.')
     .then(()=>notify('Discord ID copied!'))
     .catch(()=>notify('Failed to copy'));
 }
 
-// ════════════════════════════════════════
-//  NOTIFICATION
-// ════════════════════════════════════════
+
 let nT;
 function notify(msg){
   const el=document.getElementById('notif');
@@ -597,9 +582,7 @@ function notify(msg){
   clearTimeout(nT); nT=setTimeout(()=>el.classList.remove('show'),2500);
 }
 
-// ════════════════════════════════════════
-//  MUSIC PLAYER
-// ════════════════════════════════════════
+
 const audio=document.getElementById('audio');
 const fill=document.getElementById('progress-fill');
 const curEl=document.getElementById('cur-time');
