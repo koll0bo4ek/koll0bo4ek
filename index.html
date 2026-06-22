@@ -351,7 +351,7 @@
   </div>
 
 
-  <audio id="audio" src="UdieNnx_-_ACIDO_III_(mp3.pm).mp3" autoplay ></audio>
+  <audio id="audio" src="UdieNnx_-_ACIDO_III_(mp3.pm).mp3"></audio>
 
   <div class="divider"></div>
 
@@ -399,11 +399,7 @@
     </a>
 
   </div>
-    <div class="view-counter" id="view-counter">
-    <svg viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zm0 12.5a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-8a3 3 0 1 0 0 6 3 3 0 0 0 0-6z"/></svg>
-    <span id="view-count" class="view-count">...</span>
-    <span>просмотров</span>
-  </div>
+   
 </div>
 
 <div class="footer">made with koll0bo4ek &lt;3</div>
@@ -563,27 +559,7 @@
   loop();
 })();
 
-(async function(){
-  const NAMESPACE = 'kollobo4ek-site-2026'; 
-  const KEY       = 'visits';
-  const el        = document.getElementById('view-count');
-  const wrap      = document.getElementById('view-counter');
-
-  function fmt(n){
-    if(n >= 1000000) return (n/1000000).toFixed(1) + 'M';
-    if(n >= 1000)    return (n/1000).toFixed(1) + 'K';
-    return n.toString();
-  }
-
-  try {
-    const res  = await fetch(`https://api.countapi.xyz/hit/${NAMESPACE}/${KEY}`);
-    const data = await res.json();
-    el.textContent = fmt(data.value);
-    wrap.classList.add('loaded');
-  } catch(e) {
-    el.textContent = '—';
-  }
-})();function startSite(){
+function startSite(){
   const overlay = document.getElementById('overlay');
   overlay.classList.add('fade-out');
   setTimeout(()=>{ overlay.style.display='none'; }, 1200);
