@@ -417,21 +417,6 @@
     canvas.style.width  = window.innerWidth  + 'px';
     canvas.style.height = window.innerHeight + 'px';
   }
-  window.addEventListener('DOMContentLoaded', () => {
-  if (!audio.src || audio.src === window.location.href) return;
-
-  let playPromise = audio.play();
-
-  if (playPromise !== undefined) {
-    playPromise.then(_ => {
-      document.getElementById('play-icon').style.display = 'none';
-      document.getElementById('pause-icon').style.display = 'block';
-    })
-    .catch(error => {
-      console.log("Автоплей заблокирован браузером. Требуется клик пользователя.");
-    });
-  }
-});
 
   const buf = document.createElement('canvas');
   buf.width = W; buf.height = H;
@@ -554,13 +539,13 @@
   loop();
 })();
 
-function startSite(){
-  const overlay = document.getElementById('overlay');
-  overlay.classList.add('fade-out');
-  setTimeout(() => {
-    overlay.style.display = 'none';
-  }, 1200);
-}
+  function startSite(){
+    const overlay = document.getElementById('overlay');
+    overlay.classList.add('fade-out');
+    setTimeout(() => {
+      overlay.style.display = 'none';
+    }, 1200);
+  }
 
   
   const a = document.getElementById('audio');
