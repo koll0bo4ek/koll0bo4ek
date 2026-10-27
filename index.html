@@ -406,7 +406,6 @@
 <div class="notification" id="notif"></div>
 
 <script>
-
 (function(){
   const canvas = document.getElementById('bg-canvas');
   const ctx = canvas.getContext('2d');
@@ -417,6 +416,8 @@
     canvas.style.width  = window.innerWidth  + 'px';
     canvas.style.height = window.innerHeight + 'px';
   }
+  resize();
+  window.addEventListener('resize', resize);
 
   const buf = document.createElement('canvas');
   buf.width = W; buf.height = H;
@@ -429,14 +430,14 @@
     bx.fillRect(x,y,1,1);
   }
 
-  
+
   const skyColors = ['#080600','#0e0b00','#181200','#221900','#2e2100'];
   for(let y=0;y<H;y++){
     const ci = Math.min(skyColors.length-1, Math.floor(y/H * skyColors.length));
     for(let x=0;x<W;x++) px(x,y,skyColors[ci]);
   }
 
-  
+
   const SX=132, SY=20;
   bx.globalAlpha=1;
   for(let r=36;r>0;r--){
@@ -447,7 +448,6 @@
   bx.globalAlpha=1;
   bx.fillStyle='#fff8c0'; bx.fillRect(SX,SY,2,2);
 
- 
   const rays=[
     {a:-0.55,l:80,w:2},{a:-0.35,l:65,w:1},{a:-0.15,l:85,w:3},
     {a:0.05, l:75,w:2},{a:0.25, l:68,w:1},{a:0.45, l:78,w:2},
@@ -485,19 +485,19 @@
     }
   }
 
- 
+
   for(let i=0;i<30;i++){
     const tx=Math.floor(i*(W/30)+Math.sin(i*1.7)*4);
     tree(tx, 15+Math.floor(Math.abs(Math.sin(i*2.3))*12), 1, 3+Math.floor(Math.abs(Math.cos(i*1.5))*3), false);
   }
 
-  
+
   tree(12, 58,2,11,false); tree(40, 70,3,14,true);
   tree(70, 54,2,10,false); tree(98, 62,2,12,true);
   tree(126,68,3,13,false); tree(156,60,2,11,true);
   tree(184,52,2,10,false);
 
-  
+
   for(let y=0;y<H;y++){
     const lw=Math.floor(9+Math.sin(y*.28)*4);
     for(let x=0;x<lw;x++) px(x,y,'#040300',.92);
@@ -505,14 +505,14 @@
     for(let x=W-rw;x<W;x++) px(x,y,'#040300',.92);
   }
 
-  
+
   for(let y=H-10;y<H;y++)
     for(let x=0;x<W;x++) px(x,y,'#060400');
 
   bx.globalAlpha=1;
   const staticImg = bx.getImageData(0,0,W,H);
 
-  
+
   const GOLDS=['#b08000','#c89600','#e0aa00','#f0c000','#ffd840','#ffe860'];
   const ff=Array.from({length:55},()=>({
     x:30+Math.random()*140, y:18+Math.random()*68,
@@ -539,22 +539,24 @@
   loop();
 })();
 
-  function startSite(){
-    const overlay = document.getElementById('overlay');
-    overlay.classList.add('fade-out');
 
-    setTimeout(() => {
-      overlay.style.display = 'none';
-    }, 1200);
+function startSite(){
+  const overlay = document.getElementById('overlay');
+  overlay.classList.add('fade-out');
 
-    const a = document.getElementById('audio');
-    if(a.src && a.src !== window.location.href){
-      a.play().then(()=>{
-        document.getElementById('play-icon').style.display  = 'none';
-        document.getElementById('pause-icon').style.display = 'block';
-      }).catch(()=>{});
-    }
+  setTimeout(() => {
+    overlay.style.display = 'none';
+  }, 1200);
+
+
+  const a = document.getElementById('audio');
+  if(a.src && a.src !== window.location.href){
+    a.play().then(()=>{
+      document.getElementById('play-icon').style.display  = 'none';
+      document.getElementById('pause-icon').style.display = 'block';
+    }).catch(()=>{});
   }
+}
 
 
 const quotes=[
